@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <title>Login</title>
+
+    <!-- Estilos generales con Bootstrap -->
+    <link
+      href="{{url_for('static', filename='css/bootstrap.min.css')}}"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos especificos para login -->
+    <link href="{{url_for('static', filename='css/login.css')}}" rel="stylesheet" />
+  </head>
+  <body class="text-center">
+    <main class="form-login">
+      <form>
+        <img
+          class="mb-4"
+          src="{{url_for('static', filename='images/login_logo.svg')}}"
+          alt=""
+          width="72"
+          height="57"
+        />
+        <h1 class="h3 mb-3 fw-normal">Control de Notas EIA</h1>
+
+        <div class="form-floating">
+          <input
+            type="user"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Usuario</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+
+        <div class="contra">
+          <label>
+            <a href="">¿Olvido su contraseña?</a>
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+          Iniciar sesión
+        </button>
+        <p class="mt-5 mb-3">
+          Si tiene un nuevo usuario, por favor registre sus datos en el
+          siguiente
+          <a href="{{url_for('registro')}}">link</a>
+        </p>
+      </form>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; MinTIC 2021 - Equipo 27 - 8</p>
+      </footer>
+    </main>
+  </body>
+</html>
