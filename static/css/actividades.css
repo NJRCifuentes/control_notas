@@ -1,0 +1,168 @@
+
+
+table {
+    border-collapse: collapse;
+    column-width: 40px;
+    column-gap: 30px;
+    margin-right:40px;
+  }
+
+  #customers {
+    margin-top:90px;
+    margin-left:250px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2; text-align: center;}
+  
+  #customers tr:hover {background-color: #ddd; text-align: center;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #3a6e8f;
+    color: white;
+  }
+
+  .topnav .search-container button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topnav .search-container button:hover {
+    background: #ccc;
+  }
+
+  body {
+    font-size: 0.875rem;
+  }
+  
+  .feather {
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    padding: 5px;
+  }
+  
+  /*
+     * Sidebar
+     */
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    /* rtl:raw:
+      right: 0;
+      */
+    bottom: 0;
+    /* rtl:remove */
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 96px 0 0; /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #727272;
+  }
+  
+  .sidebar .nav-link.active {
+    color: #2470dc;
+  }
+  
+  .sidebar .nav-link:hover .feather,
+  .sidebar .nav-link.active .feather {
+    color: inherit;
+  }
+  
+  .sidebar a {
+    font-size: 15px;
+  }
+  
+  /*
+     * Navbar
+     */
+  
+  .navbar-brand {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .navbar .navbar-toggler {
+    top: 0.25rem;
+    right: 1rem;
+  }
+  
+  .navbar .form-control {
+    padding: 0.75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+  }
+  
+  .form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+  }
+  
+  .boton {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 25px;
+    border-collapse: collapse;
+    background-color: #3a6e8f;
+    color: white;
+    padding: 15px 25px;
+    position: relative;
+    left: 250px;
+    top: 30px;
+  }  
+  
+  .tabla{
+    background-color: #338AFF;
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    position: relative;
+    left: 240px;
+    top: 140px;
+  
+  }
+  
+  .cuadro {
+    width: 320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+    margin-left:250px;
+  }
+  
+ 

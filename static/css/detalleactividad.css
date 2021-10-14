@@ -1,0 +1,32 @@
+.container {
+    max-width: 960px;
+  }
+  
+  .enviar {
+    background-color: #3a6e8f; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .cancelar {
+    background-color: #c06666; /* Red */
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+  }
+  
