@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,22 +10,39 @@
 
     <!-- Estilos especificos para dashboard -->
     <link href="{{url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" />
+
+    <link href="{{url_for('static', filename='css/actividades.css')}}" rel="stylesheet" />
   </head>
 
   <body>
+    
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Control de notas EIA</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="http://127.0.0.1:5000/cursos">Control de notas EIA</a>
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
           <a class="nav-link px-3" href="#">Cerrar sesión</a>
         </div>
       </div>
     </header>
+
+  <ul class="list-unstyled" style="left: 100px">
+  <li class="media">
+    <div class="media-body">
+      <h4 class="mt-0 mb-1" style="position: absolute;left: 250px;top: 90px;  background-color: #ccd4da; padding: 12px;">01-Programacion Orientada a Obj I</h4>
+         <h5 class="mt-0 mb-1" style="position: absolute;left: 250px;top: 150px;">Docente: Phd. Juan Perez</h5>
+             <h6 class="mt-0 mb-1" style="position: absolute;left: 250px;top: 190px;">Tutores: Maria Castro, Pedro Barrios</h6>
+                 <h7 class="mt-0 mb-1" style="position: absolute;left: 250px;top: 230px;">Horarios: Lunes 9:30-11:30 a.m., Martes 5:30-7:30 p.m.</h7>
+                   <h8 class="mt-0 mb-1" style="position: absolute;left: 250px;top: 260px;">Contactos: juanperez@eia.edu.co, mariacastro@eia.edu.co, pedrobarrios@eia.edu.co</h8>
+    <i style="font-size:24px" class="fa">&#xf093;</i>
+
+    </div>
+</ul>  
+
     
-    <div class="container-fluid"> 
-      <div class="row">  
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"> 
-          <div class="position-sticky pt-3">  
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#">
@@ -41,13 +57,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link " href="http://127.0.0.1:5000/cursos">
                   <span data-feather="book"></span>
                   Cursos
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://127.0.0.1:5000/actividades">
                   <span data-feather="repeat"></span>
                   Actividades
                 </a>
@@ -72,10 +88,7 @@
               </li>
             </ul>
       </div>
-      </nav>
-      </div>
-   
-
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
         <script src="{{url_for('static', filename='js/dashboard.js')}}"></script>
       </body>

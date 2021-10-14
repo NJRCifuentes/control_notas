@@ -10,12 +10,13 @@
     <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
 
     <!-- Estilos especificos para dashboard -->
-    <link href="{{url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" />
+    <link href="{{url_for('static', filename='css/actividades.css')}}" rel="stylesheet" />
   </head>
 
   <body>
+    
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Control de notas EIA</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="http://127.0.0.1:5000/pagprincipaladmin">Control de notas EIA</a>
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
           <a class="nav-link px-3" href="#">Cerrar sesión</a>
@@ -23,10 +24,41 @@
       </div>
     </header>
     
-    <div class="container-fluid"> 
-      <div class="row">  
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"> 
-          <div class="position-sticky pt-3">  
+ <div class="search-container" style="position: absolute;right: 50px;top: 80px;">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button style="background-color: #3a6e8f;color: white;" type="submit">Buscar</button>
+    </form>
+  </div>
+
+<h4 style="position: absolute;left: 300px;top: 80px;">Cursos</h4>
+<table id="customers">
+  <tr>
+    <th>Curso</th>
+    <th>Listado Estudiantes</th>
+    <th>Listado Docentes</th>
+  </tr>
+  <tr>
+    <td>01-Programación Orientada a Obj</td>
+    <td><a href="http://127.0.0.1:5000/detallecurso">Ver</a></td>
+    <td><a href="http://127.0.0.1:5000/detallecurso">Ver</a></td>
+  </tr>
+  <tr>
+    <td>Filosofia I</td>
+    <td><a href="http://127.0.0.1:5000/detallecurso">Ver</a></td>
+     <td><a href="http://127.0.0.1:5000/detallecurso">Ver</a></td>
+  </tr>
+  <tr>
+    <td>Algoritmia II</td>
+    <td><a href="http://127.0.0.1:5000/detallecurso">Ver</a></td>
+     <td><a href="http://127.0.0.1:5000/detallecurso">Ver</a></td>
+  </tr>
+</table>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#">
@@ -35,25 +67,25 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://127.0.0.1:5000/detallecursosdocente">
                   <span data-feather="users"></span>
                   Perfil
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link " href="http://127.0.0.1:5000/cursos">
                   <span data-feather="book"></span>
                   Cursos
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://127.0.0.1:5000/actividades">
                   <span data-feather="repeat"></span>
                   Actividades
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://127.0.0.1:5000/detallecursoadmin">
                   <span data-feather="check-square"></span>
                   Calificaciones
                 </a>
@@ -72,10 +104,7 @@
               </li>
             </ul>
       </div>
-      </nav>
-      </div>
-   
-
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
         <script src="{{url_for('static', filename='js/dashboard.js')}}"></script>
       </body>

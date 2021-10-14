@@ -4,16 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <title>Dashboard administrador</title>
+    <title>Actividades</title>
 
     <!-- Estilos generales con Bootstrap -->
     <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
 
     <!-- Estilos especificos para dashboard -->
-    <link href="{{url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" />
+    <link href="{{url_for('static', filename='css/actividades.css')}}" rel="stylesheet" />
   </head>
 
   <body>
+  
+    
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Control de notas EIA</a>
       <div class="navbar-nav">
@@ -22,11 +24,73 @@
         </div>
       </div>
     </header>
-    
-    <div class="container-fluid"> 
-      <div class="row">  
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"> 
-          <div class="position-sticky pt-3">  
+
+ <div class="search-container" style="position: absolute;right: 50px;top: 80px;">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button style="background-color: #3a6e8f;color: white;" type="submit">Buscar</button>
+    </form>
+  </div>
+
+
+
+    <a 
+    href="http://127.0.0.1:5000/crearactividad" class="boton">Crear actividad
+    </a>
+<br><br>
+
+<h4 style="position: absolute;left: 300px;top: 140px;">01-Programación Orientada a Obj</h4>
+<table id="customers">
+  <tr>
+    <th>Actividad</th>
+    <th>Fecha Límite</th>
+    <th>Detalle</th>
+  </tr>
+  <tr>
+    <td>Diagrama UML</td>
+    <td>13/10/2021 a las 23:59</td>
+    <td><a href="http://127.0.0.1:5000/detalleactividad">Ver</a></td>
+  </tr>
+  <tr>
+    <td>Presentacion1</td>
+    <td>20/10/2021 a las 23:59</td>
+    <td><a href="http://127.0.0.1:5000/detalleactividad">Ver</a></td>
+  </tr>
+  <tr>
+    <td>Encapsulamiento</td>
+    <td>27/10/2021 a las 23:59</td>
+    <td><a href="http://127.0.0.1:5000/detalleactividad">Ver</a></td>
+  </tr>
+</table>
+
+<h4 style=" position: absolute;left:300px;top:390px;" >01-Filosofía I</h4>
+<table id="customers">
+  <tr>
+    <th>Actividad</th>
+    <th>Fecha Límite</th>
+    <th>Detalle</th>
+  </tr>
+  <tr>
+    <td>Ensayo</td>
+    <td>23/10/2021 a las 23:59</td>
+    <td><a href="http://127.0.0.1:5000/detalleactividad">Ver</a></td>
+  </tr>
+  <tr>
+    <td>Presentacion</td>
+    <td>05/11/2021 a las 23:59</td>
+    <td><a href="http://127.0.0.1:5000/detalleactividad">Ver</a></td>
+  </tr>
+  <tr>
+    <td>Lectura</td>
+    <td>27/11/2021 a las 23:59</td>
+    <td><a href="http://127.0.0.1:5000/detalleactividad">Ver</a></td>
+  </tr>
+</table>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#">
@@ -41,19 +105,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link " href="http://127.0.0.1:5000/cursos">
                   <span data-feather="book"></span>
                   Cursos
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://127.0.0.1:5000/actividades">
                   <span data-feather="repeat"></span>
                   Actividades
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://127.0.0.1:5000/detallecursoadmin">
                   <span data-feather="check-square"></span>
                   Calificaciones
                 </a>
@@ -72,10 +136,7 @@
               </li>
             </ul>
       </div>
-      </nav>
-      </div>
-   
-
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
         <script src="{{url_for('static', filename='js/dashboard.js')}}"></script>
       </body>
