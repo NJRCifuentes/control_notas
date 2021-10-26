@@ -145,7 +145,46 @@ table {
     left: 250px;
     top: 30px;
   }  
+
   
+  .boton2 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 25px;
+    border-collapse: collapse;
+    background-color: #9b4141;
+    color: white;
+    padding: 15px 25px;
+    position: relative;
+    left: 270px;
+    top: 30px;
+  }  
+
+  
+  .boton3 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 25px;
+    border-collapse: collapse;
+    background-color: #3a6e8f;
+    color: white;
+    padding: 15px 25px;
+    position: relative;
+    left: 250px;
+    top: 430px;
+  }  
+  
+  
+  .boton3 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 25px;
+    border-collapse: collapse;
+    background-color: #3a6e8f;
+    color: white;
+    padding: 15px 25px;
+    position: relative;
+    left: 410px;
+    top: 30px;
+  }  
+
   .tabla{
     background-color: #338AFF;
     color: white;

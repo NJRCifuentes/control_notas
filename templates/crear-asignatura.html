@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Creación Asignatura</title>
+
+
+    <!-- Bootstrap core CSS -->
+<link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='css/form-validation.css')}}" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Control de notas EIA</a>
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <a class="nav-link px-3" href="#">Cerrar sesión</a>
+        </div>
+      </div>
+    </header>
+
+    
+
+<div class="container">
+  <main>
+  
+    <div class="py-5 text-left">
+      <img class="d-block mx-auto mb-4" src="{{url_for('static', filename='images/actividad2.png')}}" align="left" alt="" width="72" height="65">
+      <h2>Creación de asignatura</h2>
+    </div>
+
+     <div class="col-md-7 col-lg-8">
+        <form class="needs-validation" novalidate action="/guardar_asignatura" method="post">
+          <div class="row g-3">
+          <div class="col-12">
+          <div class="col-sm-6">
+              <label for="asignatura" class="form-label">Asignatura:</label>
+                <select class="form-select" id="asignatura" name = "asignatura" required>
+                    <option value="">Seleccionar</option>
+                    <option>01-Programacion1</option>
+                    <option>01-Programacion2</option>
+                </select>
+              <div class="invalid-feedback">
+                Se requiere asignatura.
+              </div>
+            </div>
+          
+           
+
+            <div class="col-sm-6">
+              <label for="numactividades" class="form-label">Numero actividades:</label>
+                <select class="form-select" id="numactividades" name = "numactividades" required>
+                    <option value="">Seleccionar</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                </select>
+              <div class="invalid-feedback">
+                Se requiere numero de actividades.
+              </div>
+            </div>
+
+        <div class="btn-toolbar" >
+          <button class="enviar" type="submit">Guardar Asignatura</button>
+          <button class="cancelar" type="cancel" onclick="http://127.0.0.1:5000/actividades">Cancelar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy;  MinTIC 2021 - Equipo 8 - G27</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+      <script src="{{url_for('static', filename='js/form-validation.js')}}"></script>
+  </body>
+</html>
