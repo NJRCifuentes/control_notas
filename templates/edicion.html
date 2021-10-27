@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <title>Registro</title>
+    <title>Edición</title>
 
     <!-- Estilos generales con Bootstrap -->
     <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
@@ -19,15 +19,45 @@
       <main>
         <div class="py-5 text-center">
           <img class="d-block mx-auto mb-4" src="{{url_for('static', filename='images/users-logo.svg')}}" alt="" width="72" height="57">
-          <h2>Registro usuarios</h2>
+          <h2>Edición usuarios</h2>
         </div>
     
+    
           <div class="">
-            <form class="needs-validation" novalidate action="/guardar-registro" method="post">
+            <form class="needs-validation" novalidate action="/editarusuarios" method="post">
+                <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="IdUsuario" class="form-label">IDUsuario</label>
+                  <input type="text" class="form-control" id="idusuario" name="idusuario" placeholder="Digite IDUsuario" value="" required>
+                  <div class="invalid-feedback">
+                    IDUsuario es un dato obligatorio.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="identificacion" class="form-label">Numero de Identificación</label>
+                  <input type="text" class="form-control" id="identificacion" name="identificacion" placeholder="Digite número identificación" value="" required>
+                  <div class="invalid-feedback">
+                    Número de identificación es un dato obligatorio.
+                  </div>
+                </div>
+
+                
+                <div class="col-sm-6">
+                  <label for="username" class="form-label">Usuario</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="user" name="usuario" placeholder="ID Usuario" required>
+                  <div class="invalid-feedback">
+                      Your username is required.
+                    </div>
+                  </div>
+                </div>
+              
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="firstName" class="form-label">Nombres</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="name" name="nombre" placeholder="" value="" required>
                   <div class="invalid-feedback">
                     Nombres es un dato obligatorio.
                   </div>
@@ -35,26 +65,16 @@
     
                 <div class="col-sm-6">
                   <label for="lastName" class="form-label">Apellidos</label>
-                  <input type="text" class="form-control" id="lastname" name="lastname" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="lastname" name="apellido" placeholder="" value="" required>
                   <div class="invalid-feedback">
                     Apellidos es un dato obligatorio.
                   </div>
                 </div>
     
-                <div class="col-sm-6">
-                  <label for="username" class="form-label">Usuario</label>
-                  <div class="input-group has-validation">
-                    <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" id="user" name="user" placeholder="ID Usuario" required>
-                  <div class="invalid-feedback">
-                      Your username is required.
-                    </div>
-                  </div>
-                </div>
     
                 <div class="col-sm-6">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="usuario@ejemplo.com" required>
+                  <input type="email" class="form-control" id="email" name="correo" placeholder="usuario@ejemplo.com" required>
                   <div class="invalid-feedback">
                     El email es requerido.
                   </div>
@@ -62,7 +82,7 @@
     
                 <div class="col-sm-6">
                     <label for="country" class="form-label">Perfil</label>
-                    <select class="form-select" id="profile" name="profile" required>
+                    <select class="form-select" id="profile" name="perfil" required>
                       <option value="">Elegir...</option>
                       <option>Administrador</option>
                       <option>Estudiante</option>
@@ -72,20 +92,33 @@
                       Por favor seleccione un perfil valido.
                     </div>
                   </div>
+
+                  
+                <div class="col-sm-6">
+                    <label for="estado" class="form-label">Estado</label>
+                    <select class="form-select" id="estado" name="estado" required>
+                      <option value="">Elegir...</option>
+                      <option>Activo</option>
+                      <option>Retirado</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Por favor seleccione un estado válido.
+                    </div>
+                  </div>
     
                 <div class="col-sm-6">
                   <label for="address2" class="form-label">Pregrado</label>
-                  <input type="text" class="form-control" id="grade" name="grade" placeholder="Ingenieria sistemas">
+                  <input type="text" class="form-control" id="grade" name="pregrado" placeholder="Ingenieria sistemas">
                 </div>
     
                 <div class="col-sm-6">
                     <label for="address2" class="form-label">Fecha de nacimiento</label>
-                    <input type="date" class="form-control" id="birth-date" name="birth-date" >
+                    <input type="date" class="form-control" id="birth-date" name="fechanacimiento" >
                   </div>
     
                   <div class="col-sm-6">
                     <label for="country" class="form-label">País</label>
-                    <select class="form-select" id="country" name="country">
+                    <select class="form-select" id="country" name="pais">
                       <option value="">Elegir...</option>
                       <option>Colombia</option>
                     </select>
@@ -93,7 +126,7 @@
     
               <hr class="my-4">
     
-              <button class="w-100 btn btn-primary btn-lg" type="submit">Guardar datos</button>
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Editar datos</button>
               <ul class="list-inline text-center">
                 <li class="list-inline-item"><a href="{{url_for('login')}}">Inicio</a></li>
               </ul>

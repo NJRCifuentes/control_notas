@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <title>Actividades</title>
+    <title>Dashboard administrador</title>
 
     <!-- Estilos generales con Bootstrap -->
     <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
@@ -14,17 +14,16 @@
   </head>
 
   <body>
-  
     
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="http://127.0.0.1:5000/pagprincipaladmin">Control de notas EIA</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="http://127.0.0.1:5000/cursos">Control de notas EIA</a>
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
           <a class="nav-link px-3" href="#">Cerrar sesión</a>
         </div>
       </div>
     </header>
-
+    
  <div class="search-container" style="position: absolute;right: 50px;top: 80px;">
     <form action="/action_page.php">
       <input type="text" placeholder="Search.." name="search">
@@ -32,41 +31,33 @@
     </form>
   </div>
 
-
     <a 
-    href="http://127.0.0.1:5000/crearactividad" class="boton">Buscar por ID
-    </a>
-    
-    <a 
-    href="http://127.0.0.1:5000/eliminar_estudiante" class="boton2">Eliminar usuario
+    href="/crearcurso" class="boton3">Crear curso
     </a>
 
-<br><br>
-
-<h4 style=" position: absolute;left:300px;top:140px;" >Resultados Estudiantes en Sistema</h4>
-<table id="customers">
+<h4 style="position: absolute;left: 300px;top: 80px;">Cursos</h4>
+<table id="customers" action="/busquedacurso" method="post">
   <thead>
   <tr>
-    <th>Id</th>
-    <th>Nombres y Apellidos</th>
-    <th>Usuario</th>
-    <th>Cursos</th>
-    <th>Pregrado</th>
+    <th>IDCurso</th>
+    <th>Curso</th>
+    <th>Ciclo</th>
+    <th>Opciones Asignatura</th>
   </tr>
   </thead>
-       
+
     {% for row in rows %}  
       
         <tr>  
-            <td>{{row["IDUsuario"]}}</td> 
-            <td>{{row["Usuario"]}}</td> 
-            <td>{{row["Nombres"]}}</td>  
-            <td>{{row["Apellidos"]}}</td>
-            <td>{{row["Pregrado"]}}</td>    
+            <td>{{row["IDCurso"]}}</td> 
+            <td>{{row["NombreCurso"]}}</td> 
+            <td>{{row["Ciclo"]}}</td>  
+            <td><a href="http://127.0.0.1:5000/crearasignatura">
+            <img src="{{url_for('static', filename='images/mas.png')}}" width="50" height="50" alt="Klematis" placeholder="Agregar asignatura"></a></td>
         </tr>  
       
     {% endfor %}  
-  
+ 
 </table>
 
     <div class="container-fluid">
@@ -75,13 +66,13 @@
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">
+                <a class="nav-link" aria-current="page" href="/pagprincipaladmin">
                   <span data-feather="home"></span>
                   Dashboard
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://127.0.0.1:5000/detallecursodocente">
                   <span data-feather="users"></span>
                   Perfil
                 </a>
@@ -93,7 +84,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1:5000/crearactividad">
+                <a class="nav-link" href="http://127.0.0.1:5000/actividades">
                   <span data-feather="repeat"></span>
                   Actividades
                 </a>
