@@ -52,16 +52,16 @@
     </div>
 
       <div class="col-md-7 col-lg-8">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate action="/guardar_actividad" method="post">
           <div class="row g-3">
           <div class="col-12">
-            <label for="Asignatura" class="form-label">Asignatura:</label>
-            <select class="form-select" id="country" required>
+            <label for="Asignatura" class="form-label">IDAsignatura:</label>
+            <select class="form-select" id="asignatura" name="Asignatura" required>
               <option value="">Seleccionar</option>
-              <option>01-Programación Orientada a Obj I</option>
-              <option>02-Programación Orientada a Obj I</option>
-              <option>03-Programación Orientada a Obj II</option>
-              <option>04-Programación Orientada a Obj I</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
             </select>
             <div class="invalid-feedback">
               Please select a valid country.
@@ -88,7 +88,7 @@
 
             <div class="col-12">
               <label for="fecha" class="form-label">Fecha Límite:<span class="text-muted"></span></label>
-              <input type="date" value="2021-11-01">
+              <input type="date" value="2021-11-01" name="fechalimite">
               <div class="invalid-feedback">
                 Por favor ingrese una fecha límite.
               </div>

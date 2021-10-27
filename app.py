@@ -1,6 +1,7 @@
 # importar la librería del framework de flask
 from flask import Flask, redirect, url_for, render_template, request
-import sqlite3  
+import sqlite3 
+ 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -71,20 +72,8 @@ def detallecursoadmin():
  
 def pagprincipaladmin():
     return render_template('pag-principal-admin.html')
-#Aquí se redirige al usuario hacia el detalle de busqueda de usuarios- estudiante
- 
-@app.route('/busquedaestudiantes',methods=['GET','POST'])
- 
-def busquedaestudiantes():
-    return render_template('busqueda-estudiantes.html')
- 
- 
-#Aquí se redirige al usuario hacia el detalle de busqueda de usuarios- docentes
- 
-@app.route('/busquedadocentes',methods=['GET','POST'])
-def busquedadocentes():
-    return render_template('busqueda-docente.html')
- 
+
+
 @app.route("/informacion_estudiante")
 def InformacionEstudiante():
     return "Información del Estudiante"
@@ -147,24 +136,6 @@ def guardar_registro():
             return render_template("registro.html",msg = msg)  
             con.close()  
 
-@app.route('/guardar_curso', methods=['GET', 'POST'])
-def guardar_curso():
-    msg = "msg"  
-    if request.method == "POST":  
-        try:          
-            curso = request.form["curso"]  
-            ciclo = request.form["ciclo"]  
-            with sqlite3.connect("Sistema_Notas_EIA.db") as con:  
-                cur = con.cursor()  
-                cur.execute("INSERT into Curso (NombreCurso, Ciclo) values (?,?)",(curso, ciclo))  
-                con.commit()  
-                msg = "Se agregó el curso correctamente"  
-        except:  
-            con.rollback()  
-            msg = "ERROR: NO se agregó el curso correctamente"    
-        finally:  
-            return render_template("pag-principal-admin.html",msg = msg)  
-            con.close()  
          
             
 @app.route('/guardar_asignatura', methods=['GET', 'POST'])
@@ -240,6 +211,7 @@ def cursosadmin():
        return render_template('cursosadmin.html')
     return render_template('cursosadmin.html')
       
+#Aquí se redirige al usuario hacia el detalle de busqueda de usuarios- estudiante
 
 @app.route('/busquedaestudiantes',methods=['GET','POST'])
  
@@ -275,7 +247,7 @@ def busquedacurso():
     rows = cur.fetchall()  
     return render_template("cursosadmin.html",rows = rows)  
  
- 
+
 
 #Editar usuarios 
 
@@ -307,6 +279,67 @@ def updateSqliteTable():
                 print("Fallo al editar usuario", error)
             finally:
                     return render_template('pag-principal-admin.html')
+
+  ## UPDATES
+            
+@app.route('/guardar_actividad', methods=['GET', 'POST'])
+def guardar_actividad():
+    msg = "msg"  
+    if request.method == "POST":  
+        try:          
+            descripcion = request.form["descripcion"]  
+            notaact = 0.0
+            numhoras= 3
+            fechalimite = request.form["fechalimite"]
+            asignatura = int(request.form["Asignatura"])
+            with sqlite3.connect("Sistema_Notas_EIA.db") as con:  
+                cur = con.cursor()  
+                cur.execute("INSERT into Actividad (Descripcion, Nota_Act, Numero_Horas, Fecha_límite, IDAsig) values (?,?,?,?,?)",(descripcion,notaact,numhoras, fechalimite,asignatura ))  
+                con.commit()  
+                msg = "Se agregó la actividad correctamente"  
+        except:  
+            con.rollback()  
+            msg = "ERROR: NO se agregó la actividad correctamente"    
+        finally:  
+            return render_template("pag-principal-admin.html",msg = msg)  
+            con.close()  
+
+# Visualizar actividades
+
+@app.route('/actividades',methods=['GET','POST'])
+def actividades():
+    con = sqlite3.connect("Sistema_Notas_EIA.db")  
+    con.row_factory = sqlite3.Row  
+    cur = con.cursor()  
+    cur.execute("select  NombreCurso,IDAsig, IDActividad, Fecha_límite from ((select * from Asignatura INNER JOIN Actividad ON Asignatura.IDAsig=Actividad.IDAsig) a INNER JOIN select NombreCurso, IdAsig from Curso  ON a.IDAsig=Curso.IDAsig)")  
+    rows = cur.fetchall()  
+    return render_template('actividades.html',rows = rows)
+ 
+# Guardar Cursos
+
+            
+@app.route('/guardar_curso', methods=['GET', 'POST'])
+def guardar_curso():
+    msg = "msg"  
+    if request.method == "POST":  
+        try:
+            curso = request.form["curso"]          
+            asignatura = request.form["idasignatura"]  
+            ciclo = int(request.form["ciclo"]) 
+            promedio = 0.0 
+            with sqlite3.connect("Sistema_Notas_EIA.db") as con:  
+                cur = con.cursor()  
+                cur.execute("INSERT into Curso (NombreCurso, Ciclo, Promedio, IDAsig) values (?,?,?,?)",(curso, ciclo, promedio, asignatura))  
+                con.commit()  
+                msg = "Se agregó el curso correctamente"  
+        except:  
+            con.rollback()  
+            msg = "ERROR: NO se agregó el curso correctamente"    
+        finally:  
+            return render_template("pag-principal-admin.html",msg = msg)  
+            con.close()  
+            
+
 
 
 if __name__ == '__main__':
