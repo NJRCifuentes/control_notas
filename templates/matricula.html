@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Creación Actividad</title>
+    <title>Matricula</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -48,55 +48,43 @@
   
     <div class="py-5 text-left">
       <img class="d-block mx-auto mb-4" src="{{url_for('static', filename='images/actividad2.png')}}" align="left" alt="" width="72" height="65">
-      <h2>Creación de actividad</h2>
+      <h2>Matricula Estudiante</h2>
     </div>
 
-      <div class="col-md-7 col-lg-8">
-        <form class="needs-validation" novalidate action="/guardar_actividad" method="post">
+    <div class="col-md-7 col-lg-8">
+        <form class="needs-validation" novalidate action="/matricula" method="post">
           <div class="row g-3">
           <div class="col-12">
-            <label for="asignatura" class="form-label">IDAsignatura:</label>
-            <select class="form-select" id="asignatura" name="asignatura" required>
-              <option value="">Seleccionar</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
+            <label for="idusuario" class="form-label">IDUsuario:</label>
+              <input type="text" class="form-control" id="idusuario" name="idusuario" placeholder="" value="" required>
             <div class="invalid-feedback">
-              Please select a valid country.
+              Please select a valid IDUsuario.
             </div>
           </div>
 
-            <div class="col-sm-6">
-              <label for="nombreactividad" class="form-label">Nombre de la actividad:</label>
-              <input type="text" class="form-control" id="nombreactividad" name="nombreactividad" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Se requiere nombre de actividad.
-              </div>
+           <div class="row g-3">
+          <div class="col-12">
+            <label for="idusuario" class="form-label">IDCurso:</label>
+              <input type="text" class="form-control" id="idcurso" name="idcurso" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Please select a valid IDCurso.
             </div>
+          </div>
 
-            <div class="col-12">
-             <div class="col-sm-6">
-              <label for="descripcion"  class="form-label">Descripción:</label>
-              <textarea name="descripcion" rows="7" cols="60"></textarea>
-              <div class="invalid-feedback">
-                  Se requiere descripción de la actividad.
-                </div>
-              </div>
+            <div class="row g-3">
+          <div class="col-12">
+            <label for="idusuario" class="form-label">IDAsignatura:</label>
+              <input type="text" class="form-control" id="idasignatura" name="idasignatura" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Please select a valid IDAsignatura.
             </div>
+          </div>
+           
 
-            <div class="col-12">
-              <label for="fecha" class="form-label">Fecha Límite:<span class="text-muted"></span></label>
-              <input type="date" value="2021-11-01" name="fechalimite">
-              <div class="invalid-feedback">
-                Por favor ingrese una fecha límite.
-              </div>
-            </div>
 
         <div class="btn-toolbar" >
-          <button class="enviar" type="submit">Guardar Actividad</button>
-          <button class="cancelar" type="cancel" onclick="http://127.0.0.1:5000/actividades">Cancelar</button>
+          <button class="enviar" type="submit">Guardar Curso</button>
+          <button class="cancelar" type="cancel" onclick="/actividades">Cancelar</button>
         </div>
         </form>
       </div>

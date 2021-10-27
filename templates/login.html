@@ -17,7 +17,7 @@
   </head>
   <body class="text-center">
     <main class="form-login">
-      <form>
+      <form action="/pagprincipal" method="post">
         <img
           class="mb-4"
           src="{{url_for('static', filename='images/login_logo.svg')}}"
@@ -32,6 +32,7 @@
             type="user"
             class="form-control"
             id="floatingInput"
+            name="loginusuario"
             placeholder="name@example.com"
           />
           <label for="floatingInput">Usuario</label>
