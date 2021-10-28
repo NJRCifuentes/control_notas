@@ -185,6 +185,20 @@ table {
     top: 30px;
   }  
 
+  
+  .botonmatricula {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 25px;
+    border-collapse: collapse;
+    background-color: #3a6e8f;
+    color: white;
+    padding: 15px 25px;
+    position: relative;
+    left: 530px;
+    top: 30px;
+  }  
+
+
   .tabla{
     background-color: #338AFF;
     color: white;

@@ -42,7 +42,6 @@
     <th>IDCurso</th>
     <th>Curso</th>
     <th>Ciclo</th>
-    <th>Opciones Asignatura</th>
   </tr>
   </thead>
 
@@ -51,9 +50,7 @@
         <tr>  
             <td>{{row["IDCurso"]}}</td> 
             <td>{{row["NombreCurso"]}}</td> 
-            <td>{{row["Ciclo"]}}</td>  
-            <td><a href="http://127.0.0.1:5000/crearasignatura">
-            <img src="{{url_for('static', filename='images/mas.png')}}" width="50" height="50" alt="Klematis" placeholder="Agregar asignatura"></a></td>
+            <td>{{row["Ciclo"]}}</td> 
         </tr>  
       
     {% endfor %}  
